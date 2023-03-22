@@ -1,0 +1,10 @@
+a) A cross-platform framework for building mobile apps using JavaScript.
+a) To create a responsive design that adapts to different screen sizes.
+a) Props are used to pass data between components, while state is used to manage data within a component.
+d) CSS styles
+a) To make HTTP requests to a server
+a) setState() updates the state of a component and triggers a re-render, while forceUpdate() re-renders acomponent without updating its state
+d) All of the above
+a) To store data permanently on the device
+a) To create complex animations using JavaScript
+d) All of the above
