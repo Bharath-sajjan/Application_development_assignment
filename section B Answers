@@ -1,0 +1,73 @@
+Question 11 answers
+a) To create a new React Native app called "MyApp", you can use the following command in the terminal:
+npx react-native init MyApp
+b) The directory structure of the app would look like this:
+MyApp/__tests__/android/ios/node_modules/ src/
+│   ├── App.js
+│   ├── index.js
+├── .buckconfig
+├── .eslintrc.js
+├── .flowconfig
+├── .gitattributes
+├── .gitignore
+├── .prettierrc.js
+├── .watchmanconfig
+├── App.js
+├── app.json
+├── babel.config.js
+├── index.js
+├── metro.config.js
+├── package.json
+├── README.md
+The android/ and ios/ directories contain platform-specific code for Android and iOS respectively. The node_modules/ directory contains all the dependencies required by the app. The src/ directory contains the source code of the app, with App.js being the main entry point of the app.
+
+c) To change the app's appearance, you would modify the App.js file in the src/ directory. This file contains the root component of the app, which is responsible for rendering the user interface. You can modify the layout, styling, and components used in this file to change the appearance of the app. Additionally, you can also modify other files such as app.json and package.json to configure the app's metadata and dependencies respectively.
+
+
+Question 12 answers
+a) To change the appearance of the button in the "MyButton" component, I would pass props such as "backgroundColor", "color", "borderRadius", "borderWidth", "padding", "fontSize" and "fontWeight". These props will allow the user to customize the background color, text color, border radius, border width, padding, font size, and font weight of the button according to their preference.
+b) To handle clicks on the button, I would use the "useState" hook to define a state variable named "buttonClicks". Whenever the user clicks on the button, the "onClick" event will be triggered, and the "buttonClicks" state will be updated using the "setButtonClicks" function. This will allow us to keep track of how many times the button has been clicked and use that value to perform some action if needed.
+
+Here's an example code snippet for the "MyButton" component:
+
+""import React, { useState } from 'react';
+
+function MyButton(props) {
+  const [buttonClicks, setButtonClicks] = useState(0);
+
+  const handleClick = () => {
+    setButtonClicks(buttonClicks + 1);
+    // Perform any action based on the number of button clicks
+  }
+
+  return (
+    <button
+      style={{
+        backgroundColor: props.backgroundColor,
+        color: props.color,
+        borderRadius: props.borderRadius,
+        borderWidth: props.borderWidth,
+        padding: props.padding,
+        fontSize: props.fontSize,
+        fontWeight: props.fontWeight,
+      }}
+      onClick={handleClick}
+    >
+      Click me
+    </button>
+  );
+}
+
+export default MyButton;""
+
+Question 13 answers
+
+a) To change the appearance of the list in the "MyList" component, I would pass props such as "backgroundColor", "color", "fontSize", "fontWeight", "border", "padding", "margin", etc. These props will allow the user to customize the background color, text color, font size, font weight, border style, padding, and margin of the list according to their preference.
+
+b) I would use an array data structure to store the list items. Each element in the array will represent a list item. For example, the array could look like this:
+const listItems = ["Item 1", "Item 2", "Item 3", "Item 4"];
+c) To render the list items, I would use the map function to iterate over the array of list items and return a new array of JSX elements. Each JSX element will represent a list item and will be enclosed within an HTML "li" tag.
+Here's an example code snippet for the "MyList" component:
+
+
+
