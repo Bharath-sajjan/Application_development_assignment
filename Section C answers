@@ -1,0 +1,66 @@
+Question 14 answers
+a) The parameters that we would pass to the getWeather function are:
+
+city: A string representing the name of the city for which we want to get the temperature.
+apiKey: A string representing the API key required to make requests to the OpenWeatherMap API.
+b) The URL for the OpenWeatherMap API is: https://api.openweathermap.org/data/2.5/weather.
+c) We can handle errors or exceptions in this function by using try-catch block to catch any errors that may occur during the API request. If an error occurs, we can return a default value or throw an error to be handled by the calling code.
+Here is an example implementation of the getWeather function:
+async function getWeather(city, apiKey) {
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error('Error retrieving data from API');
+    }
+    const data = await response.json();
+    const temperature = data.main.temp;
+    return temperature;
+  } catch (error) {
+    console.error(error);
+    return 'N/A';
+  }
+}
+
+Question 15 answers
+a) To navigate to the "ProfileScreen", we could use a Stack navigation method. This would allow us to create a stack of screens, with each screen being added to the top of the stack when we navigate to it. We could then navigate back to the previous screen by popping the current screen off the stack.
+b) The props that we would pass to the "ProfileScreen" to display the user's information would include:
+
+user: An object representing the user's profile information. This object would contain properties such as name, email, phone, address, profileImage, and any other relevant information about the user.
+c) To display the user's information, we could use various components such as:
+
+Image: To display the user's profile image.
+Text: To display the user's name, email, phone number, and address.
+TouchableOpacity: To allow the user to edit their profile information by navigating to an "EditProfileScreen".
+ScrollView: To allow the user to scroll through their profile information if it is longer than the screen height.
+Here is an example implementation of the "ProfileScreen" using React Native:
+import React from 'react';
+import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
+
+function ProfileScreen({ route, navigation }) {
+  const { user } = route.params;
+
+  return (
+    <ScrollView>
+      <View style={{ alignItems: 'center' }}>
+        <Image
+          source={{ uri: user.profileImage }}
+          style={{ width: 200, height: 200, borderRadius: 100, marginVertical: 20 }}
+        />
+        <Text style={{ fontSize: 24, fontWeight: 'bold' }}>{user.name}</Text>
+        <Text style={{ fontSize: 18, marginBottom: 10 }}>{user.email}</Text>
+        <Text style={{ fontSize: 18, marginBottom: 10 }}>{user.phone}</Text>
+        <Text style={{ fontSize: 18, marginBottom: 10 }}>{user.address}</Text>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('EditProfileScreen', { user })}
+          style={{ backgroundColor: 'blue', paddingHorizontal: 20, paddingVertical: 10, borderRadius: 5 }}
+        >
+          <Text style={{ color: 'white', fontSize: 18 }}>Edit Profile</Text>
+        </TouchableOpacity>
+      </View>
+    </ScrollView>
+  );
+}
+
+export default ProfileScreen;
+Question 16 answers
